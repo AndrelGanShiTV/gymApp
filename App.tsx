@@ -2,8 +2,8 @@
 import React from "react";
 import "react-native-gesture-handler";
 //Importar las Navegaciones
-import {NavigationContainer} from "@react-navigation/native";
-import {createStackNavigator} from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 //Importar Firebase
 import FirebaseStage from "./context/firebase/firebaseStage";
 import RequestsStage from "./context/requests/requestsStage";
@@ -30,19 +30,19 @@ const App = () => {
               }}
             >
               <Stack.Screen
-                  name="Menu"
-                  component={Menu}
-                  options={{
+                name="Menu"
+                component={Menu}
+                options={{
                   title: "Menu",
                 }}
-                />
+              />
               <Stack.Screen
-                  name="Training"
-                  component={Training}
-                  options={{
+                name="Training"
+                component={Training}
+                options={{
                   title: "Training",
                 }}
-                />
+              />
             </Stack.Navigator>
           </NavigationContainer>
         </RequestsStage>

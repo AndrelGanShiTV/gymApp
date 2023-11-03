@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, { useReducer } from 'react';
 import RequestContext from './requestsContext'
 import RequestsReducer from './requestsReducer'
 
@@ -9,18 +9,18 @@ const RequestsStage = props => {
     };
 
     //Uso del useReducer
-    const[state, dispach] = useReducer(RequestsReducer, inicialStage);
+    const [state, dispach] = useReducer(RequestsReducer, inicialStage);
 
-    return(
-        <FirebaseContext.Provider
+    return (
+        <RequestContext.Provider
             value={{
                 requests: state.requests,
             }}
         >
             {props.children}
-        </FirebaseContext.Provider>
+        </RequestContext.Provider>
     )
-     
+
 }
 
 export default RequestsStage;
