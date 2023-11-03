@@ -6,8 +6,8 @@ function Menu() {
   return (
     <SafeAreaView>
       <View>
-        <Pressable >
-          <Text >Ver Entrenamientos</Text>
+        <Pressable style={{ backgroundColor: "blue" }} >
+          <Text style={{ color: 'white' }}>Ver Entrenamientos</Text>
         </Pressable>
         <Pressable>
           <Text>Cerrar Sesion</Text>
