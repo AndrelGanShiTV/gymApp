@@ -10,7 +10,6 @@ import RequestsStage from "./context/requests/requestsStage";
 //Importacion de las vistas
 import Training from "./views/Training";
 import Menu from "./views/Menu";
-import MainStack from "./navigation/MainStack";
 //Crear una variable para el uso de navigation
 const Stack = createStackNavigator();
 
@@ -19,7 +18,7 @@ const App = () => {
     <>
       <FirebaseStage>
         <RequestsStage>
-          {/* <NavigationContainer>
+          <NavigationContainer>
             <Stack.Navigator
               screenOptions={{
                 headerStyle: {
@@ -31,22 +30,21 @@ const App = () => {
               }}
             >
               <Stack.Screen
-                name="Training"
-                component={Training}
-                options={{
-                  title: "Training",
-                }}
-              />
-              <Stack.Screen
-                name="Menu"
-                component={Menu}
-                options={{
+                  name="Menu"
+                  component={Menu}
+                  options={{
                   title: "Menu",
                 }}
-              />
+                />
+              <Stack.Screen
+                  name="Training"
+                  component={Training}
+                  options={{
+                  title: "Training",
+                }}
+                />
             </Stack.Navigator>
-          </NavigationContainer> */}
-          <MainStack />
+          </NavigationContainer>
         </RequestsStage>
       </FirebaseStage>
     </>
