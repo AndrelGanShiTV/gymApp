@@ -7,13 +7,14 @@ function Menu({ navigation }) {
   return (
     <SafeAreaView>
       <View>
-        <Pressable 
-          style={style.btn} 
-          onPress={()=>{
+        <Pressable
+          style={style.btn}
+          onPress={() => {
             navigation.navigate('Training');
           }}>
           <Text style={style.btnText}>Ver Entrenamientos</Text>
         </Pressable>
+        
         <Pressable
           style={style.btn}
         >

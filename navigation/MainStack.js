@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from "@react-navigation/stack";
 import Training from "../views/Training";
 import Menu from "../views/Menu";
 
+
 const Stack = createNativeStackNavigator();
 
 function MainStack() {

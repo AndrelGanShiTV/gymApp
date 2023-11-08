@@ -1,14 +1,33 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
-import {SafeAreaView,View,Text,StyleSheet} from 'react-native';
+import React, { useEffect, useContext, Fragment } from 'react';
+import { StyleSheet } from 'react-native';
+import FirebaseContext from '../context/firebase/firebaseContext';
+import { NativeBaseProvider, Text, View, ScrollView } from 'native-base'
 
 function Training({ navigation }) {
+
+  const { training, getTraining } = useContext(FirebaseContext)
+  useEffect(() => {
+    getTraining();
+  }, [])
   return (
-    <SafeAreaView>
+    <NativeBaseProvider>
+      <ScrollView>
         <View>
-            <Text style={style.title}>Entrenamientos Programados</Text>
+          {training.map((tr) => {
+            const { date, about } = training
+            return (
+              <Fragment>
+                <View>
+                  <Text>{date}</Text>
+                  <Text>{about}</Text>
+                </View>
+              </Fragment>
+            )
+          })}
         </View>
-    </SafeAreaView>
+      </ScrollView>
+    </NativeBaseProvider>
   );
 }
 
