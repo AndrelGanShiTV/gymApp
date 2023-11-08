@@ -8,8 +8,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 import FirebaseStage from "./context/firebase/firebaseStage";
 import RequestsStage from "./context/requests/requestsStage";
 //Importacion de las vistas
+import Login from "./views/Login"
 import Training from "./views/Training";
 import Menu from "./views/Menu";
+
 //Crear una variable para el uso de navigation
 const Stack = createStackNavigator();
 
@@ -30,12 +32,20 @@ const App = () => {
               }}
             >
               <Stack.Screen
+                name="Login"
+                component={Login}
+                options={{
+                  title: "Login",
+                }}
+              />
+              <Stack.Screen
                 name="Menu"
                 component={Menu}
                 options={{
                   title: "Menu",
                 }}
               />
+
               <Stack.Screen
                 name="Training"
                 component={Training}
