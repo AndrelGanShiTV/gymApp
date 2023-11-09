@@ -1,44 +1,43 @@
-import React, { useEffect, useContext, Fragment } from 'react';
-import { StyleSheet } from 'react-native';
-import FirebaseContext from '../context/firebase/firebaseContext';
-import { NativeBaseProvider, Text, View, ScrollView } from 'native-base'
+import React, {useEffect, useContext, Fragment} from "react";
+import {StyleSheet} from "react-native";
+import FirebaseContext from "../context/firebase/firebaseContext";
+import {NativeBaseProvider, Text, View, ScrollView} from "native-base";
 
-function Training({ navigation }) {
-
-    const { training, getTraining } = useContext(FirebaseContext)
-    useEffect(() => {
-        getTraining();
-    }, [])
-    return (
-        <NativeBaseProvider>
-            <ScrollView>
+function Training({navigation}) {
+  const {training, getTraining} = useContext(FirebaseContext);
+  useEffect(() => {
+    getTraining();
+  }, []);
+  return (
+    <NativeBaseProvider>
+      <ScrollView>
+        <View>
+          {training.map(tr => {
+            const {date, about} = training;
+            return (
+              <Fragment>
                 <View>
-                    {training.map((tr) => {
-                        const { date, about } = training
-                        return (
-                            <Fragment>
-                                <View>
-                                    <Text>{date}</Text>
-                                    <Text>{about}</Text>
-                                </View>
-                            </Fragment>
-                        )
-                    })}
+                  <Text>{date}</Text>
+                  <Text>{about}</Text>
                 </View>
-            </ScrollView>
-        </NativeBaseProvider>
-    );
+              </Fragment>
+            );
+          })}
+        </View>
+      </ScrollView>
+    </NativeBaseProvider>
+  );
 }
 
 const style = StyleSheet.create({
-    title: {
-        marginHorizontal: 10,
-        marginVertical: 10,
-        fontFamily: 'caption',
-        fontSize: 25,
-        color: 'black',
-        textAlign: 'center',
-    },
+  title: {
+    marginHorizontal: 10,
+    marginVertical: 10,
+    fontFamily: "caption",
+    fontSize: 25,
+    color: "black",
+    textAlign: "center",
+  },
 });
 
 export default Training;
