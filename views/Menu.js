@@ -1,7 +1,7 @@
 import React from "react";
-import {SafeAreaView, View, Pressable, Text, StyleSheet} from "react-native";
+import { SafeAreaView, View, Pressable, Text, StyleSheet } from "react-native";
 
-function Menu({navigation}) {
+function Menu({ navigation }) {
   return (
     <SafeAreaView>
       <View>
@@ -15,7 +15,14 @@ function Menu({navigation}) {
         </Pressable>
 
         <Pressable style={style.btn}>
-          <Text style={style.btnText}>Cerrar Sesion</Text>
+          <Text
+            style={style.btnText}
+            onPress={() => {
+              navigation.navigate("Login");
+            }}
+          >
+            Cerrar Sesion
+          </Text>
         </Pressable>
       </View>
     </SafeAreaView>

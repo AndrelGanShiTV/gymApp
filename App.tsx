@@ -8,7 +8,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import FirebaseStage from "./context/firebase/firebaseStage";
 import RequestsStage from "./context/requests/requestsStage";
 //Importacion de las vistas
-import Login from "./views/Login"
+import Login from "./views/Login";
 import Training from "./views/Training";
 import Menu from "./views/Menu";
 

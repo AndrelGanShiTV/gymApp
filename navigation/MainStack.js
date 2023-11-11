@@ -1,11 +1,10 @@
 /* eslint-disable prettier/prettier */
-import React from 'react'
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/stack";
 import Login from "../views/Login";
 import Training from "../views/Training";
 import Menu from "../views/Menu";
-
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +12,7 @@ function MainStack() {
   return (
     <NavigationContainer>
       <Stack.Navigator
+        initialRouteName="Login"
         screenOptions={{
           headerStyle: {
             backgroundColor: "FFDA00",
@@ -45,7 +45,7 @@ function MainStack() {
         />
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 }
 
-export default MainStack
+export default MainStack;

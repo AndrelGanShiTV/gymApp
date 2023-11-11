@@ -10,7 +10,11 @@ const globalStyles = StyleSheet.create({
     flex: 1,
   },
   btn: {
-    backgroundColor: "#FFDA00",
+    backgroundColor: "#6D28D9",
+    marginHorizontal: 40,
+    marginVertical: 10,
+    padding: 10,
+    borderRadius: 5,
   },
   btnText: {
     textTransform: "uppercase",

@@ -15,14 +15,14 @@ const FirebaseStage = (props) => {
   const getTraining = () => {
     firebase.db.collection("training").onSnapshot(manejarSnapshot);
 
-    // function manejarSnapshot(snapshot) {
-    //   let training = snapshot.docs.map((doc) => {
-    //     return {
-    //       id: doc.id,
-    //       ...doc.date(),
-    //     };
-    //   });
-    // }
+    function manejarSnapshot(snapshot) {
+      let training = snapshot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        };
+      });
+    }
   };
 
   return (
