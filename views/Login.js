@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   View,
@@ -8,7 +8,7 @@ import {
   StyleSheet,
 } from "react-native";
 
-function Login({navigation}) {
+function Login({ navigation }) {
   const [user, setUser] = useState(""); // Estado para el usuario
   const [password, setPassword] = useState(""); // Estado para la contraseña
 
@@ -27,6 +27,7 @@ function Login({navigation}) {
       <View>
         <Text style={style.title}>Password</Text>
         <TextInput
+          style={style.input}
           placeholder="Enter Password"
           placeholderTextColor={"#ccc"}
           value={password} // Vincula el valor a 'password'
