@@ -74,6 +74,8 @@ const style = StyleSheet.create({
     color: "#000",
     padding: 15,
     borderRadius: 10,
+    marginHorizontal: 20,
+    marginVertical: 10,
   },
   btn: {
     backgroundColor: "#6D28D9",
