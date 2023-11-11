@@ -1,42 +1,46 @@
-import React, {useEffect, useContext, Fragment} from "react";
-import {StyleSheet} from "react-native";
+import React, { useEffect, useContext, Fragment } from "react";
+import { View, StyleSheet } from "react-native";
 import FirebaseContext from "../context/firebase/firebaseContext";
-import {NativeBaseProvider, Text, View, ScrollView} from "native-base";
+import { NativeBaseProvider, Text, ScrollView, Button } from "native-base";
+import { useNavigation } from "@react-navigation/native";
+import globalStyles from "../styles/global";
 
-function Training({navigation}) {
-  const {training, getTraining} = useContext(FirebaseContext);
+function Training({ navigation }) {
+  const navegation = useNavigation();
+
+  const { training, getTraining } = useContext(FirebaseContext);
   useEffect(() => {
     getTraining();
   }, []);
+
   return (
-    <NativeBaseProvider>
-      <ScrollView>
-        <View>
-          {training.map(tr => {
-            const {date, about} = training;
-            return (
-              <Fragment>
-                <View>
-                  <Text>{date}</Text>
-                  <Text>{about}</Text>
-                </View>
-              </Fragment>
-            );
-          })}
-        </View>
-      </ScrollView>
+    <NativeBaseProvider style={globalStyles.container}>
+      <View style={[globalStyles.content, style.contenido]}>
+        <Button
+          style={globalStyles.btn}
+          block
+          onPress={() => navegation.navigate("Menu")}
+        ></Button>
+        {training.map((tr) => {
+          const { date, about } = training;
+          return (
+            <Fragment>
+              <View>
+                <Text>{date}</Text>
+                <Text>{about}</Text>
+              </View>
+            </Fragment>
+          );
+        })}
+      </View>
     </NativeBaseProvider>
   );
 }
 
 const style = StyleSheet.create({
-  title: {
-    marginHorizontal: 10,
-    marginVertical: 10,
-    fontFamily: "caption",
-    fontSize: 25,
-    color: "black",
-    textAlign: "center",
+  contenido: {
+    flexDirection: "column",
+    justifyContent: "center",
   },
 });
 
